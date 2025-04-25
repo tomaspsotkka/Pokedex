@@ -1,8 +1,4 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -39,4 +35,32 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+  width: 100%;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #007acc;
+}
+
+.content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
 }
