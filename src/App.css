@@ -39,24 +39,36 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-start;
-  gap: 1rem;
+  align-items: center;
   padding: 1rem 2rem;
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
-  width: 100%;
+  background: linear-gradient(to right, #646cff, #5ac8fa);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.pokeball-logo {
+  width: 42px;
+  height: 50px;
+}
+  
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: white;
+  font-size: 1.2rem;
   font-weight: bold;
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
 .nav-link:hover {
-  color: #007acc;
+  color: #ffe66d;
 }
 
 .content {

@@ -77,3 +77,12 @@
     border-color: #646cff;
     box-shadow: 0 0 5px rgba(100, 108, 255, 0.5);
   }
+
+  .pokedex-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }

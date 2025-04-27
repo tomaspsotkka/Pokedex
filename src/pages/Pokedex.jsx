@@ -11,7 +11,7 @@ const Pokedex = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState(false);
   const [allPokemon, setAllPokemon] = useState([]);
-  const limit = 12;
+  const limit = 15;
 
   useEffect(() => {
     const offset = (page - 1) * limit;
@@ -42,7 +42,7 @@ const Pokedex = () => {
 
   return (
     <div className="pokedex-page">
-      <h1>Pokédex</h1>
+      <h1 className="pokedex-title">Pokédex</h1>
 
       {loading && <div className="pokedex-message">Loading Pokémon...</div>}
       {error && <div className="pokedex-error-message">Failed to load Pokémon. Try again!</div>}
@@ -52,7 +52,10 @@ const Pokedex = () => {
           type="text"
           placeholder="Search Pokémon..."
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.target.value);
+            setPage(1); 
+          }}
         />
       </div>
 
