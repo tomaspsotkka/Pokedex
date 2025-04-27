@@ -1,0 +1,39 @@
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .progress-label {
+    width: 100px;
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    display: flex;
+    gap: 0.2rem;
+  }
+  
+  .progress-block {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 4px;
+  }
+  
+  .progress-block.filled {
+    background-color: #646cff;
+  }
+
+  .progress-block.small {
+    background-color: #4caf50;
+  }
+  
+  .progress-block.medium {
+    background-color: #ff9800;
+  }
+  
+  .progress-block.large {
+    background-color: #f44336;
+  }

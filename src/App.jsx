@@ -10,7 +10,7 @@ function App() {
       <nav className='navbar'>
         <div className='nav-left'>
           <img src={pokeball} alt="Pokeball" className="pokeball-logo" />
-          <Link to="/" className='nav-link'>Pokedex</Link>
+          <Link to="/" className='nav-link'>Pokédex</Link>
           <Link to="/about" className='nav-link'>About</Link>
         </div>
       </nav>

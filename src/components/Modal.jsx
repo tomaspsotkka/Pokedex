@@ -1,6 +1,27 @@
 import './Modal.css';
+import ProgressBar from '../components/ProgressBar';
+import { useEffect } from 'react';
 
 const Modal = ({ isOpen, onClose, pokemon }) => {
+
+    useEffect(() => {
+        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
+
+        if (isOpen) {
+            htmlElement.classList.add('no-scroll');
+            bodyElement.classList.add('no-scroll');
+        } else {
+            htmlElement.classList.remove('no-scroll');
+            bodyElement.classList.remove('no-scroll');
+        }
+
+        return () => {
+            htmlElement.classList.remove('no-scroll');
+            bodyElement.classList.remove('no-scroll');
+        };
+    }, [isOpen]);
+
     if (!isOpen) return null;
 
     return (
@@ -32,8 +53,8 @@ const Modal = ({ isOpen, onClose, pokemon }) => {
 
                 <div className="modal-info-section">
                     <h3>Size</h3>
-                    <p><strong>Height:</strong> {pokemon.height}</p>
-                    <p><strong>Weight:</strong> {pokemon.weight}</p>
+                    <ProgressBar value={pokemon.height} maxValue={20} label="Height" />
+                    <ProgressBar value={pokemon.weight} maxValue={1000} label="Weight" />
                 </div>
                 <div className='modal-info-section'>
                     <h3>Stats</h3>

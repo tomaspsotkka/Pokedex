@@ -16,7 +16,9 @@
     padding: 2rem;
     border-radius: 12px;
     width: 90%;
-    max-width: 400px;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
     text-align: center;
     position: relative;
     animation: modal-pop 0.3s ease-out;
@@ -99,4 +101,9 @@
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
     color: #646cff;
+}
+
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden;
 }
