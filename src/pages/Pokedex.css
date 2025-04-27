@@ -16,17 +16,20 @@
   }
   
   .pagination-container button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    background-color: #eee;
-    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    background-color: #646cff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
     font-size: 1em;
   }
   
   .pagination-container button:hover:not(:disabled) {
-    background-color: #ddd;
+    background-color: #535bf2;
+    transform: translateY(-2px);
   }
   
   .pagination-container button:disabled {
@@ -86,3 +89,5 @@
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
+
+  
