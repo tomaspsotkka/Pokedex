@@ -8,12 +8,14 @@ const Pokedex = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
   const [error, setError] = useState(false);
+  const [allPokemon, setAllPokemon] = useState([]);
   const limit = 12;
 
   useEffect(() => {
     const offset = (page - 1) * limit;
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`; // fetches limited amount of pokemons
 
     setLoading(true);
     setError(false);
@@ -30,6 +32,14 @@ const Pokedex = () => {
       });
   }, [page]);
 
+  useEffect(() => {
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`; // fetches all pokemons
+
+    axios.get(url)
+      .then(res => setAllPokemon(res.data.results))
+      .catch(err => console.error(err));
+}, []);
+
   return (
     <div className="pokedex-page">
       <h1>Pokédex</h1>
@@ -37,9 +47,21 @@ const Pokedex = () => {
       {loading && <div className="pokedex-message">Loading Pokémon...</div>}
       {error && <div className="pokedex-error-message">Failed to load Pokémon. Try again!</div>}
 
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Search Pokémon..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
+
       {!loading && !error && (
         <div className="pokemon-list-container">
-          {pokemonList.map(pokemon => (
+          {allPokemon
+          .filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()))
+          .slice((page - 1) * limit, page * limit)
+          .map(pokemon => (
             <PokemonCard key={pokemon.name} url={pokemon.url} />
           ))}
         </div>

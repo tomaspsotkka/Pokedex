@@ -56,3 +56,24 @@
   .pokedex-page {
     padding: 2rem;
   }
+
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-bar input {
+    padding: 0.5rem 1rem;
+    width: 250px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s;
+  }
+  
+  .search-bar input:focus {
+    border-color: #646cff;
+    box-shadow: 0 0 5px rgba(100, 108, 255, 0.5);
+  }
