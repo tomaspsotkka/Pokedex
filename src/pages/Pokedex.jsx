@@ -5,7 +5,6 @@ import '../components/PokemonCard.css';
 import './Pokedex.css';
 
 const Pokedex = () => {
-  const [pokemonList, setPokemonList] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,8 +20,7 @@ const Pokedex = () => {
     setError(false);
 
     axios.get(url)
-      .then(res => {
-        setPokemonList(res.data.results);
+      .then(() => {
         setLoading(false);
       })
       .catch(err => {
