@@ -2,8 +2,11 @@
   <img src="https://raw.githubusercontent.com/tomaspsotkka/Pokedex/master/src/assets/pokeball.png" width="100" alt="Pokéball" />
 </p>
 
-
 # Pokédex Web Application
+
+[![CI](https://github.com/tomaspsotkka/Pokedex/actions/workflows/ci.yml/badge.svg)](https://github.com/tomaspsotkka/Pokedex/actions/workflows/ci.yml)
+[![CD](https://github.com/tomaspsotkka/Pokedex/actions/workflows/cd.yml/badge.svg)](https://github.com/tomaspsotkka/Pokedex/actions/workflows/cd.yml)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://tomaspsotkka.github.io/Pokedex)
 
 A responsive Pokédex web app built with React and Vite.  
 It fetches live Pokémon data from the PokéAPI, allowing users to browse, search, and view detailed information about each Pokémon.
